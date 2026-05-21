@@ -280,10 +280,7 @@ extern "C" void setup(void) {
 	syncAC(0);												// Synchronize TIM5 timer to AC power. Parameter is TIM5 counter value when TIM1 become zero
 	uint8_t br = core.cfg.getDsplBrightness();
 	core.dspl.BRGT::set(br);
-	// Turn-on the display backlight immediately in the debug mode
-#ifdef DEBUG_ON
-	core.dspl.BRGT::on();
-#endif
+	core.dspl.BRGT::on();									// Restore TFT backlight from saved brightness
 	HAL_Delay(500);											// Wait at least 0.5s to update the T12 iron tip connection status
 	pMode->init();
 }
