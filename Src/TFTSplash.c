@@ -12,6 +12,15 @@
     #include "lvgl/lvgl.h"
 #endif
 
+#ifndef TFTSPLASH_H_
+#define TFTSPLASH_H_
+
+#include "lvgl.h"
+
+extern const lv_img_dsc_t TFTSplash;
+
+#endif
+
 
 #ifndef LV_ATTRIBUTE_MEM_ALIGN
 #define LV_ATTRIBUTE_MEM_ALIGN
